@@ -5,42 +5,57 @@
     <title>Title</title>
 </head>
 <body>
-    <div>
-        <form action="" class="hidden">
-            <div>
-                <div>Categories</div>
-                <select class="select" name="" id="">
-                    <option value='task'>Task</option>
-                    <option value='rnd'>Random Thought</option>
-                    <option value='idea'>Idea</option>
-                </select>
-            </div>
-            <div>
-                <div>Notes content</div>
-                <input class="notes-title" type="text">
-            </div>
+<div>
+    <form action="" class="hidden">
+        <div>
+            <div>Categories</div>
+            <select class="select" name="" id="">
+                <option value='task'>Task</option>
+                <option value='rnd'>Random Thought</option>
+                <option value='idea'>Idea</option>
+                <option value='idea'>Quote</option>
+            </select>
+        </div>
+        <div>
+            <div>Notes content</div>
+            <input class="notes-title" type="text">
+        </div>
 
-            <input  class="sendForm"  type="button" value="Send">
-        </form>
+        <input class="sendForm" type="button" value="Send">
+        <input id="closeForm" type="reset" value="cansel">
+    </form>
+</div>
+<div class="container">
+    <div class="top">
+        <div class="top__name">Name</div>
+        <div class="top__name">Created</div>
+        <div class="top__name">Category</div>
+        <div class="top__name">Content</div>
+        <div class="top__name">Dates</div>
+        <div class="top__name">Icons</div>
     </div>
-  <div class="container">
-      <div class="top">
-          <div class="top__name">Name</div>
-          <div class="top__name">Created</div>
-          <div class="top__name">Category</div>
-          <div class="top__name">Content</div>
-          <div class="top__name">Dates</div>
-          <div class="top__name">Icons</div>
-      </div>
-      <div class="content">
+    <div class="content">
 
-      </div>
-      <button type="button">Create Note</button>
-      <div class="category">
-          <div class="category__name">Note category</div>
-          <div class="category__name">Active</div>
-          <div class="category__name">Archived</div>
-      </div>
-  </div>
+    </div>
+    <button type="button">Create Note</button>
+
+
+    <div class="category">
+        <div class="category__top">
+            <div class="category__name">Note category</div>
+            <div class="category__name">Active</div>
+            <div class="category__name">Archived</div>
+        </div>
+        <div class="category__content">
+            <div class="category__items">
+                <div class="category__items">Note category</div>
+                <div class="category__items">Active</div>
+                <div class="category__items">Archived</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
