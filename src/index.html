@@ -6,39 +6,57 @@
 </head>
 <body>
 <div>
-    <form action="" class="hidden">
-        <div>
-            <div>Categories</div>
-            <select class="select" name="" id="">
-                <option value='task'>Task</option>
-                <option value='rnd'>Random Thought</option>
-                <option value='idea'>Idea</option>
-                <option value='idea'>Quote</option>
-            </select>
-        </div>
-        <div>
-            <div>Notes content</div>
-            <input class="notes-title" type="text">
-        </div>
+    <div class="form-wrapper hidden">
+        <form action="" class="form-add-notes ">
+            <div class="form-content">
 
-        <input class="sendForm" type="button" value="Send">
-        <input id="closeForm" type="reset" value="cansel">
-    </form>
+                <span class="material-icons" id="close-form"> </span>
+                <div class="wrap-inputs">
+                    <div>Categories</div>
+                    <select class="select" name="" id="">
+                        <option value='task'>Task</option>
+                        <option value='rnd'>Random Thought</option>
+                        <option value='idea'>Idea</option>
+                        <option value='idea'>Quote</option>
+                    </select>
+                </div>
+
+                <div class="wrap-inputs">
+                    <div class="notes-name-wrapper">Name notes</div>
+                    <input class="notes-name" type="text">
+                </div>
+                <div class="wrap-inputs">
+                    <div>Notes content</div>
+                    <textarea rows="5" class="notes-title"></textarea>
+                </div>
+                <div class="wrap-inputs">
+                    <input class="sendForm" type="button" value="Send">
+                    <input id="closeForm" type="reset" value="cansel">
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 <div class="container">
-    <div class="top">
-        <div class="top__name">Name</div>
-        <div class="top__name">Created</div>
-        <div class="top__name">Category</div>
-        <div class="top__name">Content</div>
-        <div class="top__name">Dates</div>
-        <div class="top__name">Icons</div>
-    </div>
-    <div class="content">
+    <div class="top-wrap">
+        <div class="top">
+            <div class="top__name">Name</div>
+            <div class="top__name">Created</div>
+            <div class="top__name">Category</div>
+            <div class="top__name">Content</div>
+            <div class="top__name">Dates</div>
+            <div class="top__name">
+                <span class="material-icons">archive</span>
+                <span class="material-icons">delete</span>
+            </div>
+        </div>
+        <div class="content">
 
+        </div>
+        <div class="btn-wrapper">
+            <button id="isOpenFrom" type="button">Create Note</button>
+        </div>
     </div>
-    <button type="button">Create Note</button>
-
 
     <div class="category">
         <div class="category__top">
@@ -46,14 +64,22 @@
             <div class="category__name">Active</div>
             <div class="category__name">Archived</div>
         </div>
-        <div class="category__content">
-            <div class="category__items">
-                <div class="category__items">Note category</div>
-                <div class="category__items">Active</div>
-                <div class="category__items">Archived</div>
-            </div>
+        <div class="category__content" id="category__content-count">
+        </div>
+    </div>
+
+    <div class="category category-arhive">
+        <div class="category__top">
+            <div class="category__name">Name</div>
+            <div class="category__name">Categories</div>
+            <div class="category__name">Content</div>
+            <div class="category__name">Delete from arhive</div>
+        </div>
+        <div class="category__content" id="notes-archive">
 
         </div>
+    </div>
+
     </div>
 </div>
 
