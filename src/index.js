@@ -13,28 +13,30 @@ window.onload = function () {
     let select = document.querySelector('.select')
     let options = document.querySelector('.select').options
     const content = document.querySelector('.content')
-    const categoryArhive = document.querySelector('.category-arhive')
+    const categoryArchive = document.querySelector('.category-archive')
     const isOpenFrom = document.querySelector('#isOpenFrom')
     const closeForm = document.querySelector('#closeForm')
+    const closeFormSpan = document.querySelector('#close-form-span')
     const myForm = document.querySelector('.form-wrapper')
     const categoryContent = document.querySelector('#category__content-count')
     const notesArchive = document.querySelector('#notes-archive')
 
     // закрываем форму
     closeForm.addEventListener('click', (e) => {
-        e.preventDefault()
         myForm.classList.add('hidden')
 
     })
     // показываем форму
     isOpenFrom.addEventListener('click', (e) => {
-            e.preventDefault()
-            myForm.classList.remove('hidden')
-        }
-    )
+        e.preventDefault()
+        myForm.classList.remove('hidden')
+    })
+    closeFormSpan.addEventListener('click' , (e)=>{
+        myForm.classList.add('hidden')
+    })
 
     // удаление из архива
-    categoryArhive.addEventListener('click', (e)=>{
+    categoryArchive.addEventListener('click', (e) => {
         let id = e.target.getAttribute('data-id');
         if ((e.target.getAttribute('data-type')) === 'unarchive') {
             unarchive(id)
@@ -46,7 +48,7 @@ window.onload = function () {
         let id = e.target.getAttribute('data-id');
         if ((e.target.getAttribute('data-type')) === 'edit') {
             isEdit = true;
-            editNotes(id)
+            dataInForm(id)
 
         }
         if ((e.target.getAttribute('data-type')) === 'delete') {
@@ -58,7 +60,7 @@ window.onload = function () {
 
     })
     //заполняем форму содержимом для редактировании
-    const editNotes = (id) => {
+    const dataInForm = (id) => {
 
         editArr = allNotes.filter((item) => item.id == id)
         title.value = editArr[0].title;
@@ -103,14 +105,14 @@ window.onload = function () {
         renderCategories()
     }
     //доавление или редактивоние записи
-    const addNotes = (nameNotes = '', title = 'exmaple text', category = "text", code, id = null) => {
+    const formProcessing = (nameNotes = '', title = 'exmaple text', category = "text", code, id = null) => {
         if (title.length < 2) {
             return false
         }
         let datesArr = []
         let reg = /[\r\n]+/g;
 
-        let titleSplit = title.replace(reg," ").split(' ')
+        let titleSplit = title.replace(reg, " ").split(' ')
         titleSplit.forEach((item) => {
             if (item.match(regDate)) {
                 datesArr.push(item)
@@ -170,7 +172,7 @@ window.onload = function () {
             alert('More text please')
             return false
         }
-        addNotes(nameNotes.value, title.value, options[select.selectedIndex].text, select.value)
+        formProcessing(nameNotes.value, title.value, options[select.selectedIndex].text, select.value)
 
         nameNotes.value = ''
         title.value = ''
