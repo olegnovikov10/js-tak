@@ -1,0 +1,154 @@
+$top-bg: #999999;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: auto;
+  max-width: 1140px;
+}
+
+.links:hover{
+  cursor: pointer;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  background: $top-bg;
+  padding: 5px 0;
+  color: #fff;
+
+
+  &__name {
+    width: 200px;
+    text-align: center;
+  }
+
+}
+
+
+.content {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E8EAF5;
+    margin: 5px 0;
+    padding: 5px;
+  }
+
+  &__name {
+    width: 200px;
+    color: #7E7F84;
+    text-align: center;
+
+    &:first-child {
+      font-weight: bold;
+      color: #5f6063
+    }
+  }
+}
+
+.category {
+  margin-top: 50px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    background: $top-bg;
+    padding: 5px 0;
+    color: #fff;
+  }
+
+  &__name {
+    width: 33%;
+    text-align: center;
+
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E8EAF5;
+    margin: 5px 0;
+    padding: 5px;
+  }
+
+  &__item {
+    width: 33%;
+    text-align: center;
+    color: #7E7F84;
+
+    &:first-child {
+      font-weight: bold;
+      color: #5f6063
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.btn-wrapper {
+  text-align: right;
+  padding: 5px 0;
+}
+
+.form-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  background-color: rgba(41, 39, 39, 0.9);
+}
+
+.form-content {
+  position: relative;
+  color: #fff;
+}
+
+.wrap-inputs {
+  color: #fff;
+  margin: 5px;
+  width:200px;
+  &:last-child{
+    display: flex;
+    justify-content: space-between;
+    & input{
+      padding:2px 5px;
+      font-size: 16px;
+   }
+  }
+
+  & > div {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  & input {
+    height: 40px;
+    padding: 3px;
+    width: 100%;
+  }
+  & textarea {
+    width: 100%;
+    padding: 5px;
+  }
+
+}
+
+.select{
+  height: 30px;
+  width: 100%;
+}
+
+#close-form-span {
+  position: absolute;
+  right: -5px;
+  top: -5px
+}
